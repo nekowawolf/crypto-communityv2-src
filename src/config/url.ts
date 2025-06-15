@@ -1,0 +1,1 @@
+export const urlAPICryptoCommunity = process.env.NEXT_PUBLIC_API_CRYPTO_COMMUNITY;
