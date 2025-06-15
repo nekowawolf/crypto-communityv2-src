@@ -15,7 +15,7 @@ export default function useCryptoCommunity() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(urlAPICryptoCommunity);
+        const response = await fetch(urlAPICryptoCommunity || "");
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
