@@ -7,7 +7,6 @@ import FilterButtons from '@/components/FilterButtons';
 import Loading from '@/components/Loading';
 import Pagination from '@/components/Pagination';
 import Image from 'next/image';
-import { basePath } from '@/config/basePath';
 
 export default function Home() {
   const itemsPerPage = 10;
@@ -86,7 +85,7 @@ export default function Home() {
               {currentItems.length === 0 ? (
                 <div className="text-center">
                   <Image
-                    src={`${basePath}/img/pixchan.png`}
+                    src="/img/pixchan.png"
                     alt="No data found"
                     width={176}
                     height={176}

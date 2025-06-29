@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { basePath } from '@/config/basePath';
+
 const textArray = [
   'page not found',
   'but, are you airdrop farmers?',
@@ -71,8 +71,8 @@ export default function NotFound() {
         </a>
 
         <Image
-          src={`${basePath}/img/blue5.png`}
-          alt=""
+          src="/img/blue5.png"
+          alt="Blue Wolf"
           width={208}
           height={208}
           className="sm:w-48 bg-center sm:ml-10 ml-7 mt-7 h-auto mx-auto fixed -bottom-24 sm:-bottom-24"

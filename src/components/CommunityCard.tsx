@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import { CommunityItem } from '../types/community.d';
-import { basePath } from '../config/basePath';
 
 export default function CommunityCard({ item }: { item: CommunityItem }) {
-  const imgSrc = (item.img_url?.trim() || `${basePath}/img/placeholder.png`).trim();
+  const imgSrc = item.img_url?.trim() || '/img/placeholder.png';
 
   return (
     <div className="bg-gray-900 rounded-lg p-4 flex items-center space-x-4 w-full max-w-2xl mx-auto mb-4">
