@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-
+import Image from 'next/image';
+import { basePath } from '@/config/basePath';
 const textArray = [
   'page not found',
   'but, are you airdrop farmers?',
@@ -48,48 +49,50 @@ export default function NotFound() {
   }, []);
 
   return (
-  <div className="bg-gray-900 flex items-center justify-center min-h-screen">
-    <div className="text-center">
-      <h1 className="text-6xl mb-7 font-bold text-white">:(</h1>
-      <h1 className="text-9xl mb-2 font-bold text-blue-300">404</h1>
+    <div className="bg-gray-900 flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <h1 className="text-6xl mb-7 font-bold text-white">:(</h1>
+        <h1 className="text-9xl mb-2 font-bold text-blue-300">404</h1>
 
-      <div style={{ minHeight: '30px' }}>
-        <p
-          ref={textRef}
-          className="text-white mb-3 blinking-cursor"
-          style={{ display: 'inline-block' }}
+        <div style={{ minHeight: '30px' }}>
+          <p
+            ref={textRef}
+            className="text-white mb-3 blinking-cursor"
+            style={{ display: 'inline-block' }}
+          />
+        </div>
+
+        <a href="https://nekowawolf.xyz/airdrop" className="inline-block mb-4">
+          <img
+            src="https://www.nekowawolf.xyz/img/nww.png"
+            alt="Wolf Logo"
+            className="w-10 mt-2 h-auto mx-auto"
+          />
+        </a>
+
+        <Image
+          src={`${basePath}/img/blue5.png`}
+          alt=""
+          width={208}
+          height={208}
+          className="sm:w-48 bg-center sm:ml-10 ml-7 mt-7 h-auto mx-auto fixed -bottom-24 sm:-bottom-24"
         />
       </div>
 
-      <a href="https://nekowawolf.xyz/airdrop" className="inline-block mb-4">
-        <img
-          src="https://www.nekowawolf.xyz/img/nww.png"
-          alt="Wolf Logo"
-          className="w-10 mt-2 h-auto mx-auto"
-        />
-      </a>
-
-      <img
-        src="https://www.nekowawolf.xyz/img/blue5.png"
-        alt=""
-        className="w-52 sm:w-48 bg-center sm:ml-10 ml-7 mt-7 h-auto mx-auto fixed -bottom-24 sm:-bottom-24"
-      />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        body, .bg-gray-900 {
+          font-family: 'Montserrat', sans-serif;
+        }
+        .blinking-cursor::after {
+          content: '|';
+          margin-left: 8px;
+          animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+      `}</style>
     </div>
-
-    <style>{`
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-      body, .bg-gray-900 {
-        font-family: 'Montserrat', sans-serif;
-      }
-      .blinking-cursor::after {
-        content: '|';
-        margin-left: 8px;
-        animation: blink 1s step-start infinite;
-      }
-      @keyframes blink {
-        50% { opacity: 0; }
-      }
-    `}</style>
-  </div>
   );
 }

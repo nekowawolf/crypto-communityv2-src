@@ -1,4 +1,4 @@
-export default function Loading() {
+export default function Loading({ message = "Loading..." }: { message?: string }) {
   return (
     <div className="flex flex-col items-center mt-4">
       <svg
@@ -17,7 +17,7 @@ export default function Loading() {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
+      <span className="text-gray-400 text-sm">{message}</span>
     </div>
   );
 }

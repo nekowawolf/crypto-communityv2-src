@@ -6,6 +6,8 @@ import CommunityCard from '@/components/CommunityCard';
 import FilterButtons from '@/components/FilterButtons';
 import Loading from '@/components/Loading';
 import Pagination from '@/components/Pagination';
+import Image from 'next/image';
+import { basePath } from '@/config/basePath';
 
 export default function Home() {
   const itemsPerPage = 10;
@@ -83,10 +85,12 @@ export default function Home() {
             <div id="fillcommunity">
               {currentItems.length === 0 ? (
                 <div className="text-center">
-                  <img
-                    src="/img/pixchan.png"
+                  <Image
+                    src={`${basePath}/img/pixchan.png`}
                     alt="No data found"
-                    className="mx-auto w-44 h-44"
+                    width={176}
+                    height={176}
+                    className="mx-auto"
                   />
                   <p className="text-gray-500 mt-4">No data available.</p>
                 </div>

@@ -1,24 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import { categories } from '@/config/categories';
 
-const categories = [
-  { name: 'Airdrop', label: 'Airdrop' },
-  { name: 'Trading', label: 'Trading' },
-  { name: 'All Types', label: 'All Types' },
-  { name: 'NFT', label: 'NFT' },
-  { name: 'Developer', label: 'Developer' },
-  { name: 'Social', label: 'Social' },
-  { name: 'Web3 Jobs', label: 'Web3 Jobs' },
-  { name: 'Meme Coin', label: 'Meme Coin' },
-];
+interface FilterButtonsProps {
+  onFilterChange: (category: string) => void;
+  defaultActive?: string;
+}
 
 export default function FilterButtons({ 
-  onFilterChange 
-}: { 
-  onFilterChange: (category: string) => void 
-}) {
-  const [activeFilter, setActiveFilter] = useState('All Types');
+  onFilterChange,
+  defaultActive = 'All Types',
+}: FilterButtonsProps) {
+  const [activeFilter, setActiveFilter] = useState(defaultActive);
 
   const handleFilterClick = (category: string) => {
     setActiveFilter(category);
